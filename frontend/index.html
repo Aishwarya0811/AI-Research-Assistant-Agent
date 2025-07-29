@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Research Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-search"></i> AI Research Assistant</h1>
+            <p>Get comprehensive research with AI-powered analysis and live web data</p>
+        </header>
+
+        <main class="main-content">
+            <div class="research-form">
+                <form id="researchForm">
+                    <div class="input-group">
+                        <textarea 
+                            id="researchQuestion" 
+                            placeholder="Enter your research question (e.g., 'What are the economic impacts of climate change in Africa?')"
+                            rows="3"
+                            required
+                        ></textarea>
+                        <div class="form-controls">
+                            <label for="maxResults">Max Results:</label>
+                            <select id="maxResults">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="30">30</option>
+                            </select>
+                            <button type="submit" id="submitBtn">
+                                <i class="fas fa-search"></i> Start Research
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div id="loadingSection" class="loading-section hidden">
+                <div class="loading-animation">
+                    <div class="spinner"></div>
+                    <div class="loading-text">
+                        <h3>AI Research in Progress...</h3>
+                        <p id="loadingStage">Analyzing your question...</p>
+                        <div class="progress-steps">
+                            <div class="step active" data-step="1">
+                                <i class="fas fa-brain"></i>
+                                <span>Breaking down question</span>
+                            </div>
+                            <div class="step" data-step="2">
+                                <i class="fas fa-globe"></i>
+                                <span>Searching web</span>
+                            </div>
+                            <div class="step" data-step="3">
+                                <i class="fas fa-file-alt"></i>
+                                <span>Analyzing results</span>
+                            </div>
+                            <div class="step" data-step="4">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Compiling report</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="resultsSection" class="results-section hidden">
+                <div class="results-header">
+                    <h2>Research Results</h2>
+                    <button id="newSearchBtn" class="secondary-btn">
+                        <i class="fas fa-plus"></i> New Search
+                    </button>
+                </div>
+
+                <div class="research-overview">
+                    <div class="original-question">
+                        <h3>Original Question:</h3>
+                        <p id="originalQuestion"></p>
+                    </div>
+                    
+                    <div class="sub-questions">
+                        <h3>Research Areas Explored:</h3>
+                        <ul id="subQuestionsList"></ul>
+                    </div>
+                </div>
+
+                <div class="summary-section">
+                    <h3><i class="fas fa-file-alt"></i> Research Summary</h3>
+                    <div id="summaryContent" class="summary-content"></div>
+                </div>
+
+                <div class="sources-section">
+                    <h3><i class="fas fa-link"></i> Sources & References</h3>
+                    <div id="sourcesList" class="sources-list"></div>
+                </div>
+            </div>
+
+            <div id="errorSection" class="error-section hidden">
+                <div class="error-content">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Research Error</h3>
+                    <p id="errorMessage"></p>
+                    <button id="retryBtn" class="retry-btn">
+                        <i class="fas fa-redo"></i> Try Again
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 AI Research Assistant - Powered by OpenAI GPT-4 & SerpAPI</p>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
