@@ -24,7 +24,7 @@ An AI-powered web application that conducts comprehensive research by breaking d
 1. **Clone or download the project**
 
    ```bash
-   cd "AI Research Assistant Agent"
+   git clone https://github.com/Aishwarya0811/AI-Research-Assistant-Agent.gitcd
    ```
 2. **Install Python dependencies**
 
